@@ -18,6 +18,7 @@ class Gallery extends Model
 	];
 
 
+	// Тэги
 	public function tags() {
 		return $this->belongsToMany(Tag::class, 'gallery_tag', 'gallery_guid', 'tag_id');
 	}

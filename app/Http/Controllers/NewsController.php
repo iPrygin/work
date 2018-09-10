@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
 
-	// Коллекция новостей
+	/**
+	 * Получение коллекции новостей
+	 */
 	public function index(Request $request) {
 		return ( NewsResource::collection(News::orderBy('created_at', 'desc')
 			// Фильтрация по дате создания с помощью флага get_created_date
@@ -20,7 +22,9 @@ class NewsController extends Controller
 			})->get()) );
 	}
 
-	// Создание новости
+	/**
+	 * Создание новости
+	 */
 	public function store(Request $request) {
 		$request = $request->all();
 		$news = News::create($request);

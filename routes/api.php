@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function(Request $request) {
 });
 
 
+// Если не передан пароль, то пользователь имеет доступ только к index`ам контроллеров новостей и галлерей
 Route::get('news', 'NewsController@index');
 Route::get('galleries', 'GalleryController@index');
 

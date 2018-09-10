@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
 
-	// Коллекция галлерей
+	/**
+	 * Коллекция галлерей
+	 */
 	public function index() {
 		return (GalleryResource::collection(Gallery::orderBy('guid')->get()));
 	}
 
-	// Создание галлереи
+	/**
+	 * Создание галереи
+	 */
 	public function store(Request $request) {
 		/** @var Gallery $gallery */
 		$gallery = Gallery::create($request->all());
@@ -23,12 +27,16 @@ class GalleryController extends Controller
 		return (new GalleryResource($gallery));
 	}
 
-	// Получение галлереи
+	/**
+	 * Получение галереи
+	 */
 	public function show(Gallery $gallery) {
 		return (new GalleryResource($gallery));
 	}
 
-	// Обновление галлереи
+	/**
+	 * Обновление галереи
+	 */
 	public function update(Request $request, Gallery $gallery) {
 		$gallery->update($request->all());
 		if ($request->has('tags')) {
@@ -42,7 +50,9 @@ class GalleryController extends Controller
 		return (new GalleryResource($gallery));
 	}
 
-	// Удаление галлереи
+	/**
+	 * Обновление галереи
+	 */
 	public function destroy(Gallery $gallery) {
 		$gallery->delete();
 	}

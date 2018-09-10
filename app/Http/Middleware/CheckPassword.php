@@ -7,7 +7,7 @@ use Closure;
 class CheckPassword
 {
 	/**
-	 * Handle an incoming request.
+	 * Проверка пароля
 	 *
 	 * @param  \Illuminate\Http\Request $request
 	 * @param  \Closure                 $next

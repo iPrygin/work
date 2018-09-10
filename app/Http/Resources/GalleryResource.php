@@ -6,12 +6,12 @@ class GalleryResource extends Resource
 {
 
 	public function toArray($request) {
-
 		$tags = $this->tags->map(function($item) {
 			$item = $item->toArray();
 			unset($item['pivot']);
 			return $item;
 		});
+
 		// Поля
 		$fields = [
 			'guid'        => $this->guid,
